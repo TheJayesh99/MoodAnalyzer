@@ -15,7 +15,12 @@ public class MoodAnalyserService
 		this.message = message;
 	}
 	
-	public String analyseMood(String masssage) 
+	public Object analyseMood()
+	{
+		return analyseMood(message);
+	}
+
+	public Object analyseMood(String message)
 	{
 		if(message.contains("sad"))
 		{
