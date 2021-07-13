@@ -39,4 +39,12 @@ public class MoodAnalyseTest
 		MoodAnalyserService moodAnalyse = new MoodAnalyserService("i am in happy mood");		
 		assertEquals("happy",moodAnalyse.analyseMood());
 	}
+
+	//check for null message passed through constructor
+	@Test
+	public void givenMessageInConstructor_WhenNull_ShouldReturnHappy()
+	{
+		MoodAnalyserService moodAnalyse = new MoodAnalyserService(null);		
+		assertEquals("happy",moodAnalyse.analyseMood());
+	}
 }
