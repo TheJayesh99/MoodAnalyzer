@@ -3,7 +3,7 @@ package com.bridgelabz.moodanalyser;
 public class MoodAnalyserService
 {
 	public String message;
-	
+
 	public MoodAnalyserService() 
 	{
 		super();
@@ -14,7 +14,7 @@ public class MoodAnalyserService
 		super();
 		this.message = message;
 	}
-	
+
 	public Object analyseMood()
 	{
 		return analyseMood(message);
@@ -22,11 +22,18 @@ public class MoodAnalyserService
 
 	public Object analyseMood(String message)
 	{
-		if(message.contains("sad"))
+		try
 		{
-			return "sad";
+			if(message.contains("sad"))
+			{
+				return "sad";
+			}
+			else
+			{
+				return "happy";
+			}
 		}
-		else
+		catch (NullPointerException e) 
 		{
 			return "happy";
 		}
