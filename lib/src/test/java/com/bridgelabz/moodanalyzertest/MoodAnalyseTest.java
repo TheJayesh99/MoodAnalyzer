@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.bridgelabz.moodanalyser.MoodAnalyseException;
 import com.bridgelabz.moodanalyser.MoodAnalyserService;
 
 public class MoodAnalyseTest 
@@ -44,7 +45,14 @@ public class MoodAnalyseTest
 	@Test
 	public void givenMessageInConstructor_WhenNull_ShouldReturnHappy()
 	{
-		MoodAnalyserService moodAnalyse = new MoodAnalyserService(null);		
-		assertEquals("happy",moodAnalyse.analyseMood());
+		try 
+		{
+			MoodAnalyserService moodAnalyse = new MoodAnalyserService(null);		
+			assertEquals("happy",moodAnalyse.analyseMood());			
+		} 
+		catch (MoodAnalyseException e) 
+		{
+			assertEquals("message cannot be null", e.getMessage());
+		}
 	}
 }

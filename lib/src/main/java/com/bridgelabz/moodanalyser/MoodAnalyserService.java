@@ -20,7 +20,7 @@ public class MoodAnalyserService
 		return analyseMood(message);
 	}
 
-	public Object analyseMood(String message)
+	public Object analyseMood(String message) throws MoodAnalyseException
 	{
 		try
 		{
@@ -35,7 +35,7 @@ public class MoodAnalyserService
 		}
 		catch (NullPointerException e) 
 		{
-			return "happy";
+			throw new MoodAnalyseException("message cannot be null");
 		}
 	}
 
