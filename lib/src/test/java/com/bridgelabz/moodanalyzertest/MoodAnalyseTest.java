@@ -55,4 +55,19 @@ public class MoodAnalyseTest
 			assertEquals("message cannot be null", e.getMessage());
 		}
 	}
+
+	//check for empty message passed through constructors
+	@Test
+	public void givenMessageInConstructor_WhenEmptyString_ShouldReturnHappy()
+	{
+		try 
+		{
+			MoodAnalyserService moodAnalyse = new MoodAnalyserService("");		
+			assertEquals("happy",moodAnalyse.analyseMood());			
+		} 
+		catch (MoodAnalyseException e) 
+		{
+			assertEquals(MoodAnalyseException.type,e.type);
+		}
+	}
 }
