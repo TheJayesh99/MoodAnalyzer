@@ -13,7 +13,7 @@ public class MoodAnalyseTest
 	@Test
 	public void givenMessage_WhenSad_ShouldReturnSad() 
 	{
-		assertEquals("sad",moodService.analyseMood("i am in sad mood"));
+		assertEquals("sad",moodService.analyseMood(" i am in sad mood"));
 	}
 	
 	//check for happy mood
@@ -22,4 +22,5 @@ public class MoodAnalyseTest
 	{
 		assertEquals("happy",moodService.analyseMood("i am in any mood"));
 	}
+	
 }
